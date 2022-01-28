@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios'; 
+import axios from 'axios';
 import { useParams } from "react-router-dom";
 import BeerComp from "../BeerComp";
 
@@ -12,7 +12,7 @@ const SingleProduct = () => {
     // const [loaded, setLoaded] = useState(false);
 
     const getDataID = () => {
-        axios.get(`http://localhost:5015/beers/read/${beerId}`)
+        axios.get(`http://13.40.60.147:5015/beers/read/${beerId}`)
             .then(response => {
                 setData(response.data)
             })
@@ -23,10 +23,10 @@ const SingleProduct = () => {
 
     useEffect(getDataID, []);
 
-    return ( 
+    return (
         <div>
-            <BeerComp data={data} showButton={false}/>
-        </div> 
+            <BeerComp data={data} showButton={false} />
+        </div>
     );
 }
 

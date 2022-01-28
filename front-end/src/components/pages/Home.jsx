@@ -5,11 +5,11 @@ import Beer from "../BeerComp";
 const Home = () => {
 
     const [data, setData] = useState([]);
-    const [error, setError]= useState("");
+    const [error, setError] = useState("");
     const [loaded, setLoaded] = useState(false);
 
     const getData = () => {
-        axios.get("http://localhost:5015/beers/readAll")
+        axios.get("http://11.0.1.191:5015/beers/readAll")
             .then(response => {
                 setLoaded(true);
                 setData(response.data);
@@ -23,10 +23,10 @@ const Home = () => {
 
     useEffect(getData, []);
 
-    return ( 
+    return (
         <div>
             <h2>List of beers:</h2>
-            {loaded ? data.map((beer, i) => <Beer key={i} data={beer} showButton={true}/>) : "Loading..."}
+            {loaded ? data.map((beer, i) => <Beer key={i} data={beer} showButton={true} />) : "Loading..."}
         </div>
     );
 }
