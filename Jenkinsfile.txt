@@ -3,7 +3,7 @@ pipeline{
         stages{
             stage('Stage uno'){
                 steps{
-                    sh echo "GOOD DAY!"
+                    echo "GOOD DAY!"
 					}
                 }
             }
